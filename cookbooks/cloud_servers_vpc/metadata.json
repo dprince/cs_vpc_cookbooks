@@ -1,0 +1,41 @@
+{
+  "attributes": {
+
+  },
+  "maintainer": "Rackspace",
+  "recipes": {
+
+  },
+  "replacing": {
+
+  },
+  "license": "All rights reserved",
+  "maintainer_email": "dan.prince@rackspace.com",
+  "groupings": {
+
+  },
+  "dependencies": {
+    "iptables": [
+
+    ]
+  },
+  "recommendations": {
+
+  },
+  "name": "cloud_servers_vpc",
+  "platforms": {
+
+  },
+  "description": "Installs/Configures Cloud Servers VPC",
+  "version": "0.1.0",
+  "suggestions": {
+
+  },
+  "conflicting": {
+
+  },
+  "long_description": "= DESCRIPTION:\nRecipe to install Cloud Servers VPC.\n\nBy default the application is automatically configured to run on port\n80.  The recipe does NOT update or manage iptables rules to allow\ntraffic to the configured ports.\n\n= REQUIREMENTS:\nServers VPC RPMs must be available via Yum. Supports RHEL 5 nodes w/ EPEL.\n\n= ATTRIBUTES: \n\ncloud_servers_vpc[:rackspace_cloud_username]= Optional. If specified a /root/.rackspace_cloud config file is writting into the cloud server group that contains this username.\n\ncloud_servers_vpc[:rackspace_cloud_api_key]= Optional. If specified a /root/.rackspace_cloud config file is writting into the cloud server group that contains this api key.\n\nOptional attributes:\n\ncloud_servers_vpc[:version]= version of the RPM to install\n\ncloud_servers_vpc[:rackspace_cloud_server_name_prefix]= the prefix that will\nbe added to each cloud server that is created. Useful if you are\nusing a Rackspace Cloud Servers account for multiple purposes and you want\nto quickly identify any servers created by Cloud Servers VPC via a prefix.\nThis options is also required to call the cloud-servers-vpc-cleanup script.\n\ncloud_servers_vpc[:epel_base_url]= The base URL (http://<mirror_name) which\nwill be used as the EPEL Yum repository for RHEL/Centos images. EPEL\nis used to obtain Openvpn packages.\n\n= USAGE:\n\nExample attributes in JSON:\n\n    \"cloud_servers_vpc\": {\n        \"rackspace_cloud_username\": \"test1\",\n        \"rackspace_cloud_api_key\": \"620ba3c2680ca1c26a0ca1c2\",\n        \"epel_base_url\": \"http://mirror.rackspace.com\"\n    }\n\n",
+  "providing": {
+
+  }
+}

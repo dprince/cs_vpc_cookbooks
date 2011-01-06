@@ -1,0 +1,50 @@
+{
+  "attributes": {
+
+  },
+  "maintainer": "Opscode, Inc.",
+  "recipes": {
+    "iptables": "Installs iptables and sets up .d style config directory of iptables rules"
+  },
+  "replacing": {
+
+  },
+  "license": "Apache 2.0",
+  "maintainer_email": "cookbooks@opscode.com",
+  "groupings": {
+
+  },
+  "dependencies": {
+
+  },
+  "recommendations": {
+
+  },
+  "name": "iptables",
+  "platforms": {
+    "ubuntu": [
+
+    ],
+    "centos": [
+
+    ],
+    "debian": [
+
+    ],
+    "redhat": [
+
+    ]
+  },
+  "description": "Sets up iptables to use a script to maintain rules",
+  "version": "0.9.2",
+  "suggestions": {
+
+  },
+  "conflicting": {
+
+  },
+  "long_description": "",
+  "providing": {
+
+  }
+}

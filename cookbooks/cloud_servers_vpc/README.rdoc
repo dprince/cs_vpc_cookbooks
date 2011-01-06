@@ -1,0 +1,26 @@
+= DESCRIPTION:
+Cookbook to install Cloud Servers VPC components.
+
+= REQUIREMENTS:
+Developed and tested against Centos/RHEL 5. Requires EPEL.
+
+= ATTRIBUTES: 
+See attributes/cloud_servers_vpc.rb for options. Some common options include:
+
+cloud_servers_vpc[:version]= version of the RPM to install
+
+cloud_servers_vpc[:rackspace_cloud_server_name_prefix]= the prefix that will
+be added to each cloud server that is created. Useful if you are
+using a Rackspace Cloud Servers account for multiple purposes and you want
+to quickly identify any servers created by Cloud Servers VPC via a prefix.
+This options is also required to call the cloud-servers-vpc-cleanup script.
+
+cloud_servers_vpc[:epel_base_url]= The base URL (http://<mirror_name) which
+will be used as the EPEL Yum repository for RHEL/Centos images. EPEL
+is used to obtain Openvpn packages.
+
+= USAGE:
+
+Example roles are provided to configure the various Cloud Servers VPC
+components including the api, db, redis, and worker servers. These roles
+may be combined on the same node for a more compact or test installation.

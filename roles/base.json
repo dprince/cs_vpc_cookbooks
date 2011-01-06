@@ -1,0 +1,9 @@
+{
+  "name": "base",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+  },
+  "description": "Base role for all nodes.",
+  "run_list": ["recipe[vim]"]
+}

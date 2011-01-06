@@ -1,0 +1,9 @@
+{
+  "name": "redis",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+  },
+  "description": "Cloud Servers VPC database.",
+  "run_list": ["recipe[cloud_servers_vpc::redis]"]
+}

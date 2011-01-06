@@ -1,0 +1,22 @@
+= Cloud Servers VPC Cookbooks
+
+A set of Chef Cookbooks to install and manage a Cloud Servers VPC setup.
+
+== Description
+
+Chef Cookbooks to install and manage all the components of a Cloud Servers VPC
+installation including:
+
+-MySQL Server
+
+-Redis Server
+
+-API/webUI Servers
+
+-Linux Workers
+
+-Cron Jobs
+
+== Requirements
+
+Written and tested with Chef 0.9 and Centos 5.x.

@@ -1,0 +1,32 @@
+{
+  "name": "api",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+	"rails_enterprise": {
+		"version": "2.3.8"
+	},
+	"cloud_servers_vpc": {
+		"home": "/opt/cloud-servers-vpc",
+		"git_hub_url": "https://github.com/rackspace/cloud_servers_vpc/tarball",
+		"version": "master"
+	}
+  },
+  "description": "Cloud Servers VPC API Web Server.",
+  "run_list": [
+    "recipe[ruby_enterprise]",
+    "recipe[rails_enterprise]",
+    "recipe[apache2]",
+    "recipe[apache2::mod_ssl]",
+    "recipe[apache2::mod_rewrite]",
+    "recipe[passenger_enterprise::apache2]",
+    "recipe[cloud_servers_vpc::api]"
+  ],
+  "override_attributes": {
+	"passenger_enterprise": {
+		"version": "3.0.1",
+		"root_path": "/opt/ruby-enterprise/lib/ruby/gems/1.8/gems/passenger-3.0.1",
+		"module_path": "/opt/ruby-enterprise/lib/ruby/gems/1.8/gems/passenger-3.0.1/ext/apache2/mod_passenger.so"
+	}
+  }
+}

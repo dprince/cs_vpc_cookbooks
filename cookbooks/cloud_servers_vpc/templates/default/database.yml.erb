@@ -1,0 +1,6 @@
+production:
+  adapter: mysql
+  database: <%= node[:cloud_servers_vpc][:db_name] %>
+  username: <%= node[:cloud_servers_vpc][:db_user] %>
+  password: <%= node[:cloud_servers_vpc][:db_password] %>
+  host: <%= @database_server %>

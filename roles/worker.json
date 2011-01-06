@@ -1,0 +1,21 @@
+{
+  "name": "worker",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+	"rails_enterprise": {
+		"version": "2.3.8"
+	},
+	"cloud_servers_vpc": {
+		"home": "/opt/cloud-servers-vpc",
+		"git_hub_url": "https://github.com/rackspace/cloud_servers_vpc/tarball",
+		"version": "master"
+	}
+  },
+  "description": "Cloud Servers VPC API Web Server.",
+  "run_list": [
+    "recipe[ruby_enterprise]",
+    "recipe[rails_enterprise]",
+    "recipe[cloud_servers_vpc::worker]"
+  ]
+}
