@@ -34,3 +34,11 @@ template "/etc/cron.d/cloud_servers_vpc" do
   source "cloud_servers_vpc.cron.erb"
   notifies :run, resources("execute[touch_cron_d]")
 end
+
+include_recipe "iptables"
+iptables_rule "httpd_iptables" do
+  variables(
+    :rule_prefix => node[:cloud_servers_vpc][:httpd_iptables_rule_prefix]
+  )
+  source "httpd_iptables.erb"
+end

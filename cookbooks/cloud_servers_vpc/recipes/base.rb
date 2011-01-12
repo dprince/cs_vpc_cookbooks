@@ -81,5 +81,8 @@ end
 
 include_recipe "iptables"
 iptables_rule "ssh_iptables" do
+  variables(
+    :rule_prefix => node[:cloud_servers_vpc][:ssh_iptables_rule_prefix]
+  )
   source "ssh_iptables.erb"
 end

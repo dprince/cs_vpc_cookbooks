@@ -17,5 +17,9 @@ default[:cloud_servers_vpc][:db_name]="cs_vpc_prod"
 default[:cloud_servers_vpc][:db_user]="vpc"
 default[:cloud_servers_vpc][:db_password]="vpc123"
 
+# Default iptables rule prefixes. Can be set to "" to allow traffic on
+# any interface.
+default[:cloud_servers_vpc][:ssh_iptables_rule_prefix]="-i tun+"
 default[:cloud_servers_vpc][:mysql_iptables_rule_prefix]="-i tun+"
 default[:cloud_servers_vpc][:redis_iptables_rule_prefix]="-i tun+"
+default[:cloud_servers_vpc][:httpd_iptables_rule_prefix]="-i tun+"
