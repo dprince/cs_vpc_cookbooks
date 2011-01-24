@@ -37,11 +37,9 @@ bash "download_and_extract" do
   code <<-EOH
     mkdir -p #{node[:cloud_servers_vpc][:home]}
     cd #{node[:cloud_servers_vpc][:home]}
-    wget --no-check-certificate #{node[:cloud_servers_vpc][:git_hub_url]}/#{node[:cloud_servers_vpc][:version]} -O - | tar -xz
-    mv *-cloud_servers_vpc*/* .
-    rm -Rf *-cloud_servers_vpc*
-    cd /opt && chown cloud_servers_vpc:cloud_servers_vpc -R cloud-servers-vpc
+    wget --no-check-certificate #{node[:cloud_servers_vpc][:git_hub_url]}/#{node[:cloud_servers_vpc][:version]} -O - | tar -xz --strip=1 --overwrite
     touch #{version_check_file}
+    chown cloud_servers_vpc:cloud_servers_vpc -R #{node[:cloud_servers_vpc][:home]}
   EOH
   not_if do File.exists?(version_check_file) end
 end
