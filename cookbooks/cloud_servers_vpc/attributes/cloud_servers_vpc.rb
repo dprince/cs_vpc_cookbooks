@@ -23,3 +23,5 @@ default[:cloud_servers_vpc][:ssh_iptables_rule_prefix]="-i tun+"
 default[:cloud_servers_vpc][:mysql_iptables_rule_prefix]="-i tun+"
 default[:cloud_servers_vpc][:redis_iptables_rule_prefix]="-i tun+"
 default[:cloud_servers_vpc][:httpd_iptables_rule_prefix]="-i tun+"
+
+default[:cloud_servers_vpc][:ruby_bin]="/opt/ruby-enterprise/bin"

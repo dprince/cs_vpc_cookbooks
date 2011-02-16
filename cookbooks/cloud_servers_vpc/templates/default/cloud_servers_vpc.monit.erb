@@ -1,6 +1,6 @@
 check process resque_worker_<%= @worker_id %>
   with pidfile <%= node[:cloud_servers_vpc][:home] %>/tmp/pids/resque_worker_<%= @worker_id %>.pid
-  start program = "/bin/sh -c 'WORKER_ID=<%= @worker_id %> RAILS_ENV=production QUEUE=linux VERBOSE=1 <%= node[:cloud_servers_vpc][:home] %>/script/start_worker'" as uid cloud_servers_vpc and gid cloud_servers_vpc
+  start program = "/bin/sh -c 'WORKER_ID=<%= @worker_id %> PATH=<%= node[:cloud_servers_vpc][:ruby_bin] %>:$PATH RAILS_ENV=production QUEUE=linux VERBOSE=1 <%= node[:cloud_servers_vpc][:home] %>/script/start_worker'" as uid cloud_servers_vpc and gid cloud_servers_vpc
   stop program = "/bin/sh -c 'cd <%= node[:cloud_servers_vpc][:home] %> && kill -s QUIT `cat tmp/pids/resque_worker_<%= @worker_id %>.pid` && rm -f tmp/pids/resque_worker_<%= @worker_id %>.pid; exit 0;'"
   if totalmem is greater than 300 MB for 10 cycles then restart
 #  group resque_workers
